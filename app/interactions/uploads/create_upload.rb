@@ -1,8 +1,9 @@
 class CreateUpload < ActiveInteraction::Base
   file :photo
+  object :user
 
   def execute
-    upload = Upload.new(inputs)
+    upload = user.uploads.new(photo: photo)
 
     unless upload.save
       errors.merge!(upload.errors)

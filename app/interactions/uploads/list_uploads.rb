@@ -1,5 +1,7 @@
 class ListUploads < ActiveInteraction::Base
+  object :user
+
   def execute
-    Upload.all
+    user.uploads
   end
 end

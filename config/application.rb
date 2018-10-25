@@ -34,5 +34,6 @@ module Streetbee
 
     config.autoload_paths += %W(#{config.root}/app/workers)
     config.autoload_paths += Dir.glob("#{config.root}/app/interactions/*")
+    config.autoload_paths << "#{Rails.root}/lib"
   end
 end
