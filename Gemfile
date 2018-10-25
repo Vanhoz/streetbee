@@ -30,6 +30,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'sidekiq'
 
+gem 'exif'
+
+gem 'active_interaction', '~> 3.6'
+
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'kaminari'
+gem 'pager_api'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
