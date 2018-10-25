@@ -4,7 +4,7 @@ class UploadsController < ApplicationController
   end
 
   def upload
-    upload = CreateUpload.run(photo: params[:photo], user: current_user)
+    upload = CreateUpload.run!(photo: params[:photo], user: current_user)
     if upload.valid?
       render status: :created
     else
