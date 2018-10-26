@@ -1,24 +1,25 @@
-# README
+# Streetbee test API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small guide to deploy the app.
 
-Things you may want to cover:
+You need to have Docker and docker-compose installed.
 
-* Ruby version
+## Getting started
 
-* System dependencies
+* Run `docker-compose build` to build image, install gems and dependencies
 
-* Configuration
+* Start server with `docker-compose up`
 
-* Database creation
+* Create the database: `docker-compose run website rake db:create`
 
-* Database initialization
+* Seed the user: `docker-compose run website rake db:seed`
 
-* How to run the test suite
+* Get JWT token to authorize requests: `docker-compose run website rake auth:get_user_token`
 
-* Services (job queues, cache servers, search engines, etc.)
+* Run tests: `docker-compose run website bundle exec rspec`
 
-* Deployment instructions
+## Requests
 
-* ...
+* Upload photos: `/uploads/upload`
+
+* Get photos with pagination: `/uploads?page=1`
